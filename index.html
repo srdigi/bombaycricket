@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bombay Cricket Analyst - cricket match analysis, statistics, form insights and pre-match updates.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Bombay Cricket Analyst">
+  <meta property="og:description" content="Cricket analysis, match insights and statistics in one place.">
+  <meta property="og:type" content="website">
+  <title>Bombay Cricket Analyst | Cricket Analysis</title>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255,193,7,.22), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(16,185,129,.18), transparent 30%),
+        linear-gradient(145deg,#07111f 0%,#0d1b2a 48%,#06131d 100%);
+      color:#fff;
+      font-family:"Segoe Print","Comic Sans MS",cursive;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:18px;
+      overflow-x:hidden;
+    }
+    .page{
+      width:100%;
+      max-width:480px;
+      position:relative;
+    }
+    .card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:30px;
+      padding:26px 20px 22px;
+      background:rgba(7,18,31,.88);
+      box-shadow:0 25px 70px rgba(0,0,0,.45);
+      backdrop-filter:blur(12px);
+    }
+    .top-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:7px 13px;
+      border-radius:999px;
+      background:rgba(255,193,7,.13);
+      border:1px solid rgba(255,193,7,.35);
+      color:#ffd45c;
+      font-size:13px;
+      letter-spacing:.3px;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:92px;height:92px;
+      margin:0 auto 15px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      position:relative;
+      background:linear-gradient(145deg,#f7c948,#ff8a00);
+      box-shadow:0 0 0 7px rgba(255,193,7,.09),0 12px 35px rgba(255,152,0,.22);
+      border:4px solid #fff;
+    }
+    .logo:before{
+      content:"🏏";
+      font-family:Arial,sans-serif;
+      font-size:43px;
+      transform:rotate(-12deg);
+    }
+    .ball{
+      position:absolute;
+      right:4px;top:4px;
+      width:24px;height:24px;
+      border-radius:50%;
+      background:#d71920;
+      border:2px solid #fff;
+      font-family:Arial,sans-serif;
+    }
+    .ball:after{
+      content:"";
+      position:absolute;
+      left:8px;top:1px;
+      height:18px;width:5px;
+      border-left:2px dashed #fff;
+      transform:rotate(28deg);
+    }
+    h1{
+      text-align:center;
+      font-size:34px;
+      line-height:1.05;
+      color:#fff;
+      text-shadow:2px 3px 0 rgba(0,0,0,.28);
+      margin-bottom:9px;
+    }
+    .sub{
+      text-align:center;
+      color:#dce7f2;
+      font-size:15px;
+      line-height:1.6;
+      margin:0 auto 20px;
+      max-width:390px;
+    }
+    .highlight{
+      color:#ffd04a;
+    }
+    .features{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+      margin:18px 0;
+    }
+    .feature{
+      padding:13px 10px;
+      border-radius:17px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.09);
+      text-align:center;
+      font-size:13px;
+      color:#f2f6fa;
+      line-height:1.35;
+    }
+    .feature strong{
+      display:block;
+      font-size:21px;
+      font-family:Arial,sans-serif;
+      margin-bottom:4px;
+    }
+    .cta{
+      display:block;
+      width:100%;
+      text-align:center;
+      text-decoration:none;
+      color:#101820;
+      background:linear-gradient(135deg,#ffd84d,#ff9d00);
+      border-radius:17px;
+      padding:16px 14px;
+      font-size:18px;
+      font-weight:900;
+      font-family:"Segoe Print","Comic Sans MS",cursive;
+      box-shadow:0 12px 28px rgba(255,157,0,.23);
+      border:2px solid rgba(255,255,255,.55);
+      transition:.2s ease;
+      margin-top:5px;
+    }
+    .cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .mini{
+      text-align:center;
+      color:#9fb1c1;
+      font-size:11px;
+      margin-top:13px;
+      line-height:1.5;
+      font-family:Arial,sans-serif;
+    }
+    .note{
+      margin-top:16px;
+      padding:11px 12px;
+      border-left:3px solid #ffd04a;
+      background:rgba(255,208,74,.055);
+      border-radius:8px;
+      color:#c9d5df;
+      font-size:11px;
+      line-height:1.55;
+      font-family:Arial,sans-serif;
+    }
+    .signature{
+      text-align:center;
+      margin-top:16px;
+      color:#71879a;
+      font-size:11px;
+    }
+    @media(max-width:360px){
+      h1{font-size:29px}
+      .card{padding:22px 15px 18px}
+      .logo{width:82px;height:82px}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="top-badge">🏏 DAILY CRICKET INSIGHTS</div>
+
+      <div class="logo" aria-label="Bombay Cricket Analyst logo">
+        <span class="ball"></span>
+      </div>
+
+      <h1>Bombay Cricket<br><span class="highlight">Analyst</span></h1>
+
+      <p class="sub">
+        Match se pehle <span class="highlight">team form, player stats, pitch trends</span>
+        aur important cricket insights — simple handwritten-style presentation mein.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <strong>📊</strong>
+          Match Analysis
+        </div>
+        <div class="feature">
+          <strong>🏏</strong>
+          Player Form
+        </div>
+        <div class="feature">
+          <strong>📈</strong>
+          Stats & Trends
+        </div>
+        <div class="feature">
+          <strong>🔥</strong>
+          Pre-Match Updates
+        </div>
+      </div>
+
+      <!-- Replace YOUR_LINK_HERE with your actual destination link -->
+      <a class="cta" href="https://t.me/+w85LiGLTPLdjMDE9" target="_blank" rel="noopener noreferrer">
+        🏏 GET TODAY'S CRICKET ANALYSIS →
+      </a>
+
+      <div class="mini">
+        Tap the button above to continue
+      </div>
+
+      <div class="note">
+        Disclaimer: This page provides cricket information and analysis for
+        entertainment/informational purposes. No result or outcome is guaranteed.
+      </div>
+
+      <div class="signature">✍️ Bombay Cricket Analyst</div>
+    </section>
+  </main>
+</body>
+</html>
